@@ -1,0 +1,48 @@
+Rock Paper Scissors Pseudocode
+
+1. Get player choice (either rock paper or Scissors)
+
+2. Get computer choice (either rock paper or Scissors)
+
+3. Set win/lose conditions
+    If player choice = Rock  
+    computer choice = Scissors 
+    player wins computer loses
+
+    If player choice = Rock  
+    computer choice = paper 
+    player loses computer wins
+
+    If player choice = Rock  
+    computer choice = Rock 
+    its a tie 
+
+    If player choice = Scissors  
+    computer choice = Scissors 
+    its a tie
+
+    If player choice = Scissors  
+    computer choice = paper 
+    player wins computerloses
+
+    If player choice = Scissors
+    computer choice = Rock 
+    player loses computer wins
+
+    If player choice = Paper  
+    computer choice = Scissors 
+    player loses computer wins
+
+    If player choice = Paper  
+    computer choice = Paper 
+    its a tie
+
+    If player choice = Paper  
+    computer choice = Rock
+    player wins computer loses
+
+
+
+
+
+
