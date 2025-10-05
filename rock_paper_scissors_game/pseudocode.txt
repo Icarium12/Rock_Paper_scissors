@@ -41,6 +41,8 @@ Rock Paper Scissors Pseudocode
     computer choice = Rock
     player wins computer loses
 
+4. Keep track of score
+
 
 
 
