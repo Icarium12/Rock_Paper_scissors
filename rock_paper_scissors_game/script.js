@@ -133,13 +133,13 @@ function playGame() {
     } 
 
     if (humanScore > computerScore) {
-        console.log("Your score is " + humanScore + " and computer score is " + computerScore + " you win!!!");
+        console.log(alert("Your score is " + humanScore + " and computer score is " + computerScore + " you win!!!"));
     }
     else if (humanScore === computerScore) {
-        console.log("Your score is " + humanScore + " and computer score is " + computerScore + " it's a tie");
+        console.log(alert("Your score is " + humanScore + " and computer score is " + computerScore + " it's a tie"));
     }
     else {
-        console.log("Your score is " + humanScore + " and computer score is " + computerScore + " you lose");
+        console.log(alert("Your score is " + humanScore + " and computer score is " + computerScore + " you lose"));
     }
 }
 
