@@ -1,10 +1,10 @@
 function getComputerChoice() {
     const computerChoice = Math.random();
     let choice;
-    if (computerChoice <= 0.3) {
+    if (computerChoice < 0.3) {
         choice = "rock"
     }
-    else if (computerChoice <= 0.6) {
+    else if (computerChoice < 0.6) {
         choice = "paper"
     }
     else {
@@ -26,48 +26,61 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
     humanChoice.toLowerCase();
 
+    let humanScore = document.createElement("h5");
+    humanScore.textContent = parseInt("0");
+    
+    let computerScore = document.createElement("h5");
+    computerScore.textContent = parseInt("0")
+
     // rock conditions
     if (humanChoice === "rock"  && computerChoice === "paper") {
-        console.log("You lose! Paper beats rock");
+        const roundWinner = document.createElement("h6");
+        roundWinner.textContent = "You lose! Paper beats rock";
+        scoreDiv.appendChild(roundWinner);
         computerScore++;
     }
     else if (humanChoice === "rock" && computerChoice === "scissors") {
-        console.log("You win! rock beats scissors");
+        const roundWinner = document.createElement("h6");
+        roundWinner.textContent = "You win! rock beats scissors";
+        scoreDiv.appendChild(roundWinner);
         humanScore++;
     }
 
     else if (humanChoice === computerChoice) {
-        console.log("It's a tie");
+        const roundWinner = document.createElement("h6");
+        roundWinner.textContent = "It's a tie";
+        scoreDiv.appendChild(roundWinner);
     }
 
     // paper conditions
     else if (humanChoice === "paper" && computerChoice === "rock") {
-        console.log("You win! paper beats rock");
-        humanScore++
+        const roundWinner = document.createElement("h6");
+        roundWinner.textContent = "You win! paper beats rock";
+        scoreDiv.appendChild(roundWinner);
+        humanScore++;
     }
 
     else if (humanChoice === "paper" && computerChoice === "scissors") {
-        console.log("You lose! scissors beat paper");
-        computerScore++
-    }
-
-    else if (humanChoice === computerChoice) {
-        console.log("It's a tie");
+        const roundWinner = document.createElement("h6");
+        roundWinner.textContent ="You lose! scissors beat paper";
+        scoreDiv.appendChild(roundWinner);
+        computerScore++;
     }
 
     // scissors conditions
     else if (humanChoice === "scissors" && computerChoice === "rock") {
-        console.log("You lose! rock beats scissors")
+        const roundWinner = document.createElement("h6");
+        roundWinner.textContent ="You lose! rock beats scissors";
+        scoreDiv.appendChild(roundWinner);
         computerScore++;
     }
 
     else if (humanChoice === "scissors" && computerChoice === "paper") {
+        const roundWinner = document.createElement("h6");
+        roundWinner.textContent ="You win! scissors beat paper";
+        scoreDiv.appendChild(roundWinner);
         console.log("You win! scissors beat paper")
         humanScore++;
-    }
-
-    else if (humanChoice === computerChoice) {
-        console.log("It's a tie!")
     }
 } 
 
@@ -83,6 +96,7 @@ function playGame() {
 
         // rock conditions
         if (humanChoice === "rock"  && computerChoice === "paper") {
+            
             console.log("You lose! Paper beats rock");
             computerScore++;
         }
@@ -145,8 +159,8 @@ function playGame() {
 
 
 // console.log(playGame());
-humanScore = 0;
-computerScore = 0;
+// humanScore = 0;
+// computerScore = 0;
 
 
 const rockSelection = document.createElement("button");
@@ -175,3 +189,6 @@ const body = document.body;
 body.appendChild(rockSelection);
 body.appendChild(paperSelection);
 body.appendChild(scissorsSelection);
+
+const scoreDiv = document.createElement("div");
+body.appendChild(scoreDiv);
