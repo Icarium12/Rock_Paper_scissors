@@ -24,13 +24,6 @@ function getHumanChoice() {
 
 
 function playRound(humanChoice, computerChoice) {
-    humanChoice.toLowerCase();
-
-    let humanScore = document.createElement("h5");
-    humanScore.textContent = parseInt("0");
-    
-    let computerScore = document.createElement("h5");
-    computerScore.textContent = parseInt("0")
 
     // rock conditions
     if (humanChoice === "rock"  && computerChoice === "paper") {
@@ -82,6 +75,8 @@ function playRound(humanChoice, computerChoice) {
         console.log("You win! scissors beat paper")
         humanScore++;
     }
+    playerTally = humanScore;
+    computerTally = computerScore;
 } 
 
 // playRound(getHumanChoice(), getComputerChoice())
@@ -161,7 +156,8 @@ function playGame() {
 // console.log(playGame());
 // humanScore = 0;
 // computerScore = 0;
-
+let humanScore = 0;
+let computerScore = 0;
 
 const rockSelection = document.createElement("button");
 rockSelection.textContent = "rock";
@@ -174,10 +170,14 @@ scissorsSelection.textContent = "scissors";
 
 rockSelection.addEventListener("click", () => {
     playRound(rockSelection.textContent, getComputerChoice())
+    console.log(`Your score is ${humanScore}`);
+    console.log(`Computer score is ${computerScore}`);
 });
 
 paperSelection.addEventListener("click", () => {
     playRound(paperSelection.textContent, getComputerChoice())
+    console.log(`Your score is ${humanScore}`);
+    console.log(`Computer score is ${computerScore}`);
 });
 
 scissorsSelection.addEventListener("click", () => {
@@ -192,3 +192,4 @@ body.appendChild(scissorsSelection);
 
 const scoreDiv = document.createElement("div");
 body.appendChild(scoreDiv);
+
